@@ -1,0 +1,24 @@
+schema = 1
+platform = "linux32"
+component = "steamui"
+module_name = "steamui.so"
+module_sha256 = "d6daf841066f918c8306b81eea92eb42b61d088f91d541c05666839657997fed"
+module_size = 39234348
+gnu_build_id = "2174d0fd4c81d88d33c8302c1b0beb1561b82c71"
+steam_version = 1786661881
+consumer_commit = "1668847593433088472814782be29c55734345e5"
+minimum_consumer_schema = 1
+revision = 1
+source = "deterministic"
+
+[[locators]]
+symbol = "Patterns::ISteamMatchmakingPingResponse::ServerResponded"
+name = "ISteamMatchmakingPingResponse::ServerResponded"
+target_rva = 24351888
+match_rva = 24351945
+signature = "8B 85 ? ? ? ? 8B 40 ? 85 C0 0F 84 ? ? ? ? 39 46"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
