@@ -1,0 +1,84 @@
+schema = 1
+platform = "linux32"
+component = "steamui"
+module_name = "steamui.so"
+module_sha256 = "1525110fe7259ff78aae069dadddefc526763ef6fa37637207fde36e3b72fbbb"
+module_size = 39247820
+gnu_build_id = "e94d8975f96df5266995d54dac2b388c69a1ae63"
+steam_version = 1787790984
+consumer_commit = "d3402a1800e647778db7fb8a2bb900ea24991dc3"
+minimum_consumer_schema = 1
+revision = 1
+source = "deterministic"
+
+[[locators]]
+symbol = "Patterns::ISteamMatchmakingPingResponse::ServerResponded"
+name = "ISteamMatchmakingPingResponse::ServerResponded"
+target_rva = 24357264
+match_rva = 24357321
+signature = "8B 85 ? ? ? ? 8B 40 ? 85 C0 0F 84 ? ? ? ? 39 46"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::AppControllerRunFrame"
+name = "CSteamUIAppController::RunFrame"
+target_rva = 25140912
+match_rva = 25140912
+signature = "55 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 83 EC 7C E8 ? ? ? ? 8B 84 24 90 00 00 00 D9 5C 24 0C D9 44 24 0C"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::BuildCompleteAppOverviewChange"
+name = "BuildCompleteAppOverviewChange"
+target_rva = 25079792
+match_rva = 25079792
+signature = "55 89 E5 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 81 EC 8C 00 00 00 8B 7D 08 89 5D A4 E8 ? ? ? ? 84 C0"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::GetAppByID"
+name = "CSteamUIAppController::GetAppByID"
+target_rva = 25195056
+match_rva = 25195056
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 4C 8B 5D 10 8B 75 08 89 45 C8 8B 80 E0 09 00 00"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::MarkAppChange"
+name = "CUpdateManager::MarkAppChange"
+target_rva = 26531424
+match_rva = 26531424
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 3C 8B 75 0C 8B 5D 10 89 45 D4 8B 80 E0 09 00 00"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::OwnershipFlagsReference"
+name = "CSteamApp::OwnershipFlagsReference"
+target_rva = 25097876
+match_rva = 25097876
+signature = "8B ? 18 8B 9D ? ? ? ? 83 EC 04 50 8D 83 ? ? ? ? 50 FF B5 ? ? ? ? E8 ? ? ? ?"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
