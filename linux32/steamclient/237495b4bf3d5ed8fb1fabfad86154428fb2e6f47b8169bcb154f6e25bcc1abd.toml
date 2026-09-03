@@ -6,9 +6,9 @@ module_sha256 = "237495b4bf3d5ed8fb1fabfad86154428fb2e6f47b8169bcb154f6e25bcc1ab
 module_size = 49829436
 gnu_build_id = "29734b56790cf24d55e6fbdd007bda96f1df724a"
 steam_version = 1788400362
-consumer_commit = "d3402a1800e647778db7fb8a2bb900ea24991dc3"
+consumer_commit = "cae57d230f2261de9de4794b3b082a7c9e12e2d8"
 minimum_consumer_schema = 1
-revision = 1
+revision = 2
 source = "deterministic"
 
 [[locators]]
@@ -65,6 +65,18 @@ name = "CAppInfoCache::ThreadedReadFromDisk"
 target_rva = 16647152
 match_rva = 16647152
 signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC 0C 11 00 00 8B 45 08 89 85 0C EF FF FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CCMInterface::RecvPkt"
+name = "CCMInterface::RecvPkt"
+target_rva = 18248624
+match_rva = 18248624
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC CC 04 00 00 8B 45 08 8B 7D 0C 89 85 50 FB FF FF 65 A1 14 00 00 00 89 45 E4 31 C0 8B 86"
 follow_mode = "None"
 resolver = "signature"
 required = false
@@ -324,12 +336,36 @@ match_count = 1
 target_count = 1
 
 [[locators]]
+symbol = "Patterns::CUser::Offset_CompatManager"
+name = "CUser::m_CompatManager"
+target_rva = 25731825
+match_rva = 25731825
+signature = "8D 9E ? ? ? ? 89 9D ? ? ? ? 53 89 FB E8 ? ? ? ? 58 5A C7 86 ? ? ? ? FF FF FF FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
 symbol = "Patterns::CUser::PostCallback"
 name = "CSteamEngine::PostCallback"
 target_rva = 16969296
 match_rva = 26423415
 signature = "E8 ? ? ? ? 8D 86 ? ? ? ? 83 C4 18 68 F6 01 00 00"
 follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::PostCallbackToAppId"
+name = "CUser::PostCallbackToAppId"
+target_rva = 16970720
+match_rva = 16971082
+signature = "84 C0 0F 45 F8 89 F8"
+follow_mode = "PrologueUpwards"
 resolver = "signature"
 required = true
 match_count = 1
@@ -384,18 +420,6 @@ match_count = 1
 target_count = 1
 
 [[locators]]
-symbol = "Patterns::FamilyGroupRunningApp"
-name = "FamilyGroupRunningApp"
-target_rva = 25966768
-match_rva = 17428023
-signature = "E8 ? ? ? ? 83 C4 10 83 EC 08 C7 46 ? 01 00 00 00 C6 46 ? 01 56 57 E8 ? ? ? ? 83 C4 1C B8 01 00 00 00 5B 5E 5F 5D C3 ? ? ? ? ? ? ? 83 EC 04"
-follow_mode = "Relative"
-resolver = "signature"
-required = true
-match_count = 1
-target_count = 1
-
-[[locators]]
 symbol = "Patterns::IClientAppManager::BCanRemotePlayTogether"
 name = "IClientAppManager::BCanRemotePlayTogether"
 target_rva = 16812656
@@ -427,6 +451,18 @@ match_rva = 21616188
 signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 37 9C 88 A6"
 follow_mode = "PrologueUpwards"
 resolver = "ipcframe-root"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientFriends::GetFriendGamePlayed"
+name = "IClientFriends::GetFriendGamePlayed"
+target_rva = 23005856
+match_rva = 23005943
+signature = "C7 45 ? A2 F1 5B 33 6A 04 50 57 E8 ? ? ? ?"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
 required = true
 match_count = 1
 target_count = 1
@@ -595,18 +631,6 @@ signature = "84 C0 75 27 8B 85 ? ? ? ? 8D 9D ? ? ? ? 83 EC 04 FF B0 82 01 00 00 
 follow_mode = "None"
 resolver = "signature"
 required = false
-match_count = 1
-target_count = 1
-
-[[locators]]
-symbol = "Patterns::StopPlayingBorrowedApp"
-name = "StopPlayingBorrowedApp"
-target_rva = 17429856
-match_rva = 17430052
-signature = "8B 40 ? 83 EC 0C 89 F3 8B 95"
-follow_mode = "PrologueUpwards"
-resolver = "signature"
-required = true
 match_count = 1
 target_count = 1
 

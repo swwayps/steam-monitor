@@ -6,9 +6,9 @@ module_sha256 = "8c77009990cb21cee14628dcb8b2aa417c598f5194b18a25e0cb516e4e36db3
 module_size = 39277132
 gnu_build_id = "a856fa76c939b5b0e9441a343dcb348a0d5390ec"
 steam_version = 1788400362
-consumer_commit = "d3402a1800e647778db7fb8a2bb900ea24991dc3"
+consumer_commit = "cae57d230f2261de9de4794b3b082a7c9e12e2d8"
 minimum_consumer_schema = 1
-revision = 1
+revision = 2
 source = "deterministic"
 
 [[locators]]
