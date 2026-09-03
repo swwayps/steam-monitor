@@ -1,0 +1,623 @@
+schema = 1
+platform = "linux32"
+component = "steamclient"
+module_name = "steamclient.so"
+module_sha256 = "237495b4bf3d5ed8fb1fabfad86154428fb2e6f47b8169bcb154f6e25bcc1abd"
+module_size = 49829436
+gnu_build_id = "29734b56790cf24d55e6fbdd007bda96f1df724a"
+steam_version = 1788400362
+consumer_commit = "d3402a1800e647778db7fb8a2bb900ea24991dc3"
+minimum_consumer_schema = 1
+revision = 1
+source = "deterministic"
+
+[[locators]]
+symbol = "Patterns::CAPIJob::GetPlayerStats"
+name = "CAPIJob::GetPlayerStats"
+target_rva = 26998048
+match_rva = 27006671
+signature = "E8 ? ? ? ? 83 C4 10 89 C5 E9 ? ? ? ? ? ? 80 BE ? ? ? ? 00"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CAppInfoCache::GetOrAddAppData"
+name = "CAppInfoCache::GetOrAddAppData"
+target_rva = 16655056
+match_rva = 16655056
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 2C 8B 75 0C 8B 7D 10 89 45 D0 8B 80 BC 08 00 00 8B 00 85 C0 0F 85 ? ? ? ?"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CAppInfoCache::ShaReference"
+name = "CAppInfoCache::ShaReference"
+target_rva = 25743956
+match_rva = 25743956
+signature = "8D 40 1C 50 E8 ? ? ? ? 83 C4 10 85 C0 75 10 0F B6 4C 24 1E 80 7E 10 00 0F 44 C8 88 4C 24 1E"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CAppInfoCache::SkipFlagReference"
+name = "CAppInfoCache::SkipFlagReference"
+target_rva = 25743977
+match_rva = 25743977
+signature = "80 7E 10 00 0F 44 C8 88 4C 24 1E 8B 44 24 10 83 C7 01 3B 7D 44 8B 30 7C 9E"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CAppInfoCache::ThreadedReadFromDisk"
+name = "CAppInfoCache::ThreadedReadFromDisk"
+target_rva = 16647152
+match_rva = 16647152
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC 0C 11 00 00 8B 45 08 89 85 0C EF FF FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::BYldRequestDepotManifest"
+name = "CDepotDownloadMgr::BYldRequestDepotManifest"
+target_rva = 20390000
+match_rva = 20390000
+signature = "55 B9 FD FF FF FF 89 E5 57 E8 ? ? ? ? 81 C7 ? ? ? ? 56 53 83 EC 7C 8B 45 14 8B 55 18"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::BuildDepotDependency"
+name = "CDepotDownloadMgr::BuildDepotDependency"
+target_rva = 18529504
+match_rva = 18529504
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 81 EC 8C 04 00 00 8B 55 10 8B 7D 0C 89 85 A0 FB FF FF 8B 45 08"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::EvaluateConfigChanges"
+name = "CDepotDownloadMgr::EvaluateConfigChanges"
+target_rva = 17075258
+match_rva = 17075258
+signature = "55 89 E5 57 56 53 81 EC DC 00 00 00 89 85 50 FF FF FF 8B 45 10 89 85 40 FF FF FF 8B 45 08 8B 40 04"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::OnChunkUnpackedReg"
+name = "CDepotDownloadMgr::OnChunkUnpacked[regparm3]"
+target_rva = 20553920
+match_rva = 20553920
+signature = "55 89 E5 57 E8 ? ? ? ? 81 C7 ? ? ? ? 56 89 C6 53 81 EC 7C 04 00 00 8B 45 0C 89 95 90 FB FF FF 89 8D 8C FB FF FF 89 85 94 FB FF FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::OnChunkUnpackedStack"
+name = "CDepotDownloadMgr::OnChunkUnpacked[cdecl]"
+target_rva = 20535136
+match_rva = 20535136
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC 7C 04 00 00 8B 45 0C 8B 7D 08 89 85 90 FB FF FF 8B 45 10 89 85 8C FB FF FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::PrepareDepotDownload"
+name = "CDepotDownloadMgr::PrepareDepotDownload"
+target_rva = 16775584
+match_rva = 16775584
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 EC 60 8B 7D 08 8B 45 18 8B 55 1C FF 75 20 89 45 98 52 50 FF 75 14 89 55 9C FF 75 10 FF 75 0C 57 E8 ? ? ? ? 8B 47 4C 83 C4 20 83 F8 FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CDepotDownloadMgr::ProcessDepotManifest"
+name = "CDepotDownloadMgr::ProcessDepotManifest"
+target_rva = 16774288
+match_rva = 16774288
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 4C 8B 55 1C 89 45 C0 8B 45 18 89 55 CC 89 45 C8"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CJobMgr::BRouteMsgToJob"
+name = "CJobMgr::BRouteMsgToJob"
+target_rva = 45201264
+match_rva = 45201264
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 EC 7C 8B 45 08 8B 4D 14 89 45 90 8B 45 0C 89 4D A0 89 45 88 8B 45 10 89 45 A4 65 8B 0D 14 00 00"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CPackageInfoCache::LoadPackage"
+name = "CPackageInfoCache::LoadPackage"
+target_rva = 16684928
+match_rva = 16682722
+signature = "E8 ? ? ? ? 83 C4 10 84 C0 0F 84 ? ? ? ? 8B 95 ? ? FF FF 8B 7A 18 83 FF FF"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CProtoBufMsgBase::InitFromPacket"
+name = "CProtoBufMsgBase::InitFromPacket"
+target_rva = 45617984
+match_rva = 17391145
+signature = "E8 ? ? ? ? 58 8B 45 ? 8B 8D"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CProtoBufMsgBase::Send"
+name = "CProtoBufMsgBase::Send"
+target_rva = 45619792
+match_rva = 17835818
+signature = "E8 ? ? ? ? 59 5A 50 56 E8 ? ? ? ? 83 C4 0C"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CRemoteClientManager::RecvPkt"
+name = "CRemoteClientManager::RecvPkt"
+target_rva = 24410688
+match_rva = 24410688
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 EC 1C 8B 86 ? 08 00 00 8B 00 85 C0 0F 85 ? ? ? ? C7 45 E4 00 00 00 00 83 EC 08 89 F3 6A 01 FF 75 0C E8 ? ? ? ? 89 C7 83 C4 10 85 C0 0F 84 ? ? ? ? 83 EC 0C 50"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamEngine::Init"
+name = "CSteamEngine::Init"
+target_rva = 25101632
+match_rva = 25249694
+signature = "E8 ? ? ? ? 83 C4 10 8D 83 ? ? ? ? 83 EC 0C 89 AB"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamEngine::Offset_User"
+name = "CSteamEngine::m_pUser"
+target_rva = 25225489
+match_rva = 25225489
+signature = "8B 80 ? ? ? ? FF 75 ? 8D 34"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamEngine::SetAppIdForCurrentPipe"
+name = "CSteamEngine::SetAppIdForCurrentPipe"
+target_rva = 25160448
+match_rva = 20595689
+signature = "E8 ? ? ? ? E9 ? ? ? ? ? ? ? ? ? 8B 85 ? ? ? ? 83 EC 08 FF B5"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamMatchmakingServers::GetServerDetails"
+name = "CSteamMatchmakingServers::GetServerDetails"
+target_rva = 23793616
+match_rva = 23793718
+signature = "89 45 ? 83 C4 10 83 EC 0C 89 F3"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamMatchmakingServers::RequestInternetServerList"
+name = "CSteamMatchmakingServers::RequestInternetServerList"
+target_rva = 23790432
+match_rva = 23790469
+signature = "C7 04 24 ? ? 00 00 E8 ? ? ? ? 5A 89 45 ? 59 FF B6 ? ? ? ? FF B6 ? ? ? ? FF B6 ? ? ? ? FF B6 ? ? ? ? FF B6 ? ? ? ? 6A 01"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::CheckAppOwnership"
+name = "CUser::CheckAppOwnership"
+target_rva = 25759072
+match_rva = 16809747
+signature = "E8 ? ? ? ? 88 45 ? 83 C4 10 84 C0 0F 84 ? ? ? ? 8B 45 ? 80 7D ? 00"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::GetSubscribedApps"
+name = "CUser::GetSubscribedApps"
+target_rva = 25811840
+match_rva = 27075682
+signature = "E8 ? ? ? ? 89 C6 83 C4 10 85 C0 0F 84 ? ? ? ? 8B 9D ? ? ? ? 39 D8"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::MarkLicenseAsChanged"
+name = "CUser::MarkLicenseAsChanged"
+target_rva = 25741056
+match_rva = 25741056
+signature = "55 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 83 EC 2C 8B 74 24 40 8B 44 24 48 8B BE ? ? 00 00 88 44 24 1C 8D 86 ? ? 00 00 89 44 24 0C 85 FF 0F 84 ? ? ? ?"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::NotifyLicensesUpdated"
+name = "CUser::NotifyLicensesUpdated"
+target_rva = 25741648
+match_rva = 25741648
+signature = "55 89 E5 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 81 EC ? ? ? ? 8B 45 08 8B B8 ? ? 00 00 89 9D ? ? FF FF 85 FF"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::PostCallback"
+name = "CSteamEngine::PostCallback"
+target_rva = 16969296
+match_rva = 26423415
+signature = "E8 ? ? ? ? 8D 86 ? ? ? ? 83 C4 18 68 F6 01 00 00"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::ProcessPendingLicenseUpdates"
+name = "CUser::ProcessPendingLicenseUpdates"
+target_rva = 25743680
+match_rva = 25743680
+signature = "55 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 83 EC 2C 8B 44 24 40 8B 88 7C 1C 00 00 85 C9 0F 8E ? ? ? ? 05 70 1C 00 00 89 44 24 18 8D 83 ? ? ? ? 8B 30"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUser::UpdateAppOwnershipTicket"
+name = "IClientUser::UpdateAppOwnershipTicket"
+target_rva = 25816656
+match_rva = 17368968
+signature = "E8 ? ? ? ? E9 ? ? ? ? ? ? ? ? ? ? 8D 45 ? 89 45 ? EB"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CUtlMemory::Grow"
+name = "CUtlMemory::Grow"
+target_rva = 16730000
+match_rva = 16685748
+signature = "E8 ? ? ? ? 8B 85 ? ? FF FF 83 C4 10 8B 40 44 89 85 ? ? FF FF 83 C0 01 E9"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CWebSocketConnection::BBuildAndAsyncSendFrame"
+name = "CWebSocketConnection::BBuildAndAsyncSendFrame"
+target_rva = 48015504
+match_rva = 48015504
+signature = "55 89 E5 57 E8 ? ? ? ? 81 C7 ? ? ? ? 56 53 81 EC AC 00 00 00 8B 45 10 8B 55 08 89 85 ? ? FF FF 89 95 ? ? FF FF 65 A1 14 00 00 00"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::FamilyGroupRunningApp"
+name = "FamilyGroupRunningApp"
+target_rva = 25966768
+match_rva = 17428023
+signature = "E8 ? ? ? ? 83 C4 10 83 EC 08 C7 46 ? 01 00 00 00 C6 46 ? 01 56 57 E8 ? ? ? ? 83 C4 1C B8 01 00 00 00 5B 5E 5F 5D C3 ? ? ? ? ? ? ? 83 EC 04"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientAppManager::BCanRemotePlayTogether"
+name = "IClientAppManager::BCanRemotePlayTogether"
+target_rva = 16812656
+match_rva = 16812693
+signature = "58 5A FF 74 24 ? 56 E8 ? ? ? ? 83 C4 10 85 C0 74"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientAppManager::RunIPCFrame"
+name = "IClientAppManager::RunIPCFrame"
+target_rva = 21636400
+match_rva = 21636476
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D B7 85 0A 7A"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientApps::RunIPCFrame"
+name = "IClientApps::RunIPCFrame"
+target_rva = 21616112
+match_rva = 21616188
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 37 9C 88 A6"
+follow_mode = "PrologueUpwards"
+resolver = "ipcframe-root"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientRemoteStorage::RunIPCFrame"
+name = "IClientRemoteStorage::RunIPCFrame"
+target_rva = 21880656
+match_rva = 21880732
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 6C E8 2F 87"
+follow_mode = "PrologueUpwards"
+resolver = "ipcframe-root"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUGC::RunIPCFrame"
+name = "IClientUGC::RunIPCFrame"
+target_rva = 22252176
+match_rva = 22252252
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 62 0C D2 71"
+follow_mode = "PrologueUpwards"
+resolver = "ipcframe-root"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::BLoggedOn"
+name = "IClientUser::BLoggedOn"
+target_rva = 18170816
+match_rva = 18169317
+signature = "E9 ? ? ? ? ? ? ? ? ? ? 5B 5E 5F FF E0"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::BUpdateAppOwnershipTicket"
+name = "IClientUser::BUpdateAppOwnershipTicket"
+target_rva = 26021424
+match_rva = 26021578
+signature = "83 EC 0C 89 F3 8B 7D ? FF 30 E8 ? ? ? ? 83 C4 10 83 FF 01 77 ? 84 C0 75 ? 80 7D ? 00 74 ? 80 7D ? 00 0F 84 ? ? ? ? 8D 65"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::GetAppOwnershipTicketExtendedData"
+name = "IClientUser::GetAppOwnershipTicketExtendedData"
+target_rva = 26015536
+match_rva = 26015551
+signature = "83 EC 24 FF 74 24 ? 8B 44 24"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::GetSteamId"
+name = "IClientUser::GetSteamID"
+target_rva = 21099920
+signature = "E8 ? ? ? ? 89 D8 83 C4 0C 83 C4 08 5B C2 04 00 ? 83 EC 08 50 53 FF D2 89 D8 83 C4 0C 83 C4 08 5B C2 04 00"
+follow_mode = "Relative"
+resolver = "relative-convergence"
+required = true
+match_count = 20
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::IsUserSubscribedAppInTicket"
+name = "IClientUser::IsUserSubscribedAppInTicket"
+target_rva = 16981760
+match_rva = 20612602
+signature = "E8 ? ? ? ? 89 C3 83 C4 20 8B ? ? ? ? ? 8B"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::RequiresLegacyCDKey"
+name = "IClientUser::RequiresLegacyCDKey"
+target_rva = 26012064
+match_rva = 26012151
+signature = "75 ? 83 C4 1C 31 C0 5B 5E 5F 5D C3 ? ? ? ? ? 8B 44 24 ? 83 C4 1C 89 F9 89 F2 5B 5E 5F 5D 2D ? ? 00 00"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUser::RunIPCFrame"
+name = "IClientUser::RunIPCFrame"
+target_rva = 21139024
+match_rva = 21139100
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 10 A3 86 73"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUserStats::RunIPCFrame"
+name = "IClientUserStats::RunIPCFrame"
+target_rva = 21813728
+match_rva = 21813804
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 8F 65 6D 87"
+follow_mode = "PrologueUpwards"
+resolver = "ipcframe-root"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUtils::Offset_GetPipeIndex"
+name = "IClientUtils::m_PipeIndex"
+target_rva = 25320138
+match_rva = 25320138
+signature = "8B 91 ? ? ? ? 83 F8 FF 74 ? 8B 89 ? ? ? ? EB ? ? ? ? 8B 00 83 F8 FF 74 ? 8D 04 ? 8D 04 ? 3B 50"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::IClientUtils::RunIPCFrame"
+name = "IClientUtils::RunIPCFrame"
+target_rva = 21503328
+match_rva = 21504244
+signature = "83 EC 08 89 F3 50 57 E8 ? ? ? ? 58 FF B5 ? ? ? ? E8 ? ? ? ? 58 8D 45"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::ParentalSettingsReceived"
+name = "ParentalSettingsReceived"
+target_rva = 25919936
+match_rva = 25919936
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC 00 02 00 00 8B 45 08 8B 55 1C 8B 7D 0C"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::ParentalSignatureCheck"
+name = "ParentalSignatureCheck"
+target_rva = 25918428
+match_rva = 25918428
+signature = "84 C0 75 27 8B 85 ? ? ? ? 8D 9D ? ? ? ? 83 EC 04 FF B0 82 01 00 00 8D 86 ? ? ? ? 50 53 E8 ? ? ? ?"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::StopPlayingBorrowedApp"
+name = "StopPlayingBorrowedApp"
+target_rva = 17429856
+match_rva = 17430052
+signature = "8B 40 ? 83 EC 0C 89 F3 8B 95"
+follow_mode = "PrologueUpwards"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::TraceIPC"
+name = "TraceIPC"
+target_rva = 27481968
+match_rva = 21358738
+signature = "E8 ? ? ? ? 83 C4 10 85 FF 74 ? 8B 07 83 EC 04 FF B5 ? ? ? ? FF B5 ? ? ? ? 57 FF 10 83 C4 10 8D 45 ? 83 EC 04 89 F3 6A 04 50 FF 75"
+follow_mode = "Relative"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
