@@ -5,10 +5,10 @@ module_name = "steamclient.so"
 module_sha256 = "237495b4bf3d5ed8fb1fabfad86154428fb2e6f47b8169bcb154f6e25bcc1abd"
 module_size = 49829436
 gnu_build_id = "29734b56790cf24d55e6fbdd007bda96f1df724a"
-steam_version = 1788400362
-consumer_commit = "cae57d230f2261de9de4794b3b082a7c9e12e2d8"
+steam_version = 1788652215
+consumer_commit = "edfc7ea975f5b64d1c3ae86ac41bd9bf059d1cb8"
 minimum_consumer_schema = 1
-revision = 2
+revision = 3
 source = "deterministic"
 
 [[locators]]
@@ -19,7 +19,7 @@ match_rva = 27006671
 signature = "E8 ? ? ? ? 83 C4 10 89 C5 E9 ? ? ? ? ? ? 80 BE ? ? ? ? 00"
 follow_mode = "Relative"
 resolver = "signature"
-required = true
+required = false
 match_count = 1
 target_count = 1
 
@@ -28,7 +28,7 @@ symbol = "Patterns::CAppInfoCache::GetOrAddAppData"
 name = "CAppInfoCache::GetOrAddAppData"
 target_rva = 16655056
 match_rva = 16655056
-signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 2C 8B 75 0C 8B 7D 10 89 45 D0 8B 80 BC 08 00 00 8B 00 85 C0 0F 85 ? ? ? ?"
+signature = "E8 ? ? ? ? 05 ? ? ? ? 55 89 E5 57 56 53 83 EC 2C 8B 75 0C 8B 7D 10 89 45 D0 8B 80 ? ? 00 00 8B 00 85 C0 0F 85 ? ? ? ?"
 follow_mode = "None"
 resolver = "signature"
 required = false
@@ -76,7 +76,7 @@ symbol = "Patterns::CCMInterface::RecvPkt"
 name = "CCMInterface::RecvPkt"
 target_rva = 18248624
 match_rva = 18248624
-signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC CC 04 00 00 8B 45 08 8B 7D 0C 89 85 50 FB FF FF 65 A1 14 00 00 00 89 45 E4 31 C0 8B 86"
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 81 EC ? ? 00 00 8B 45 08 8B 7D 0C 89 85 ? ? FF FF 65 A1 14 00 00 00 89 45 E4 31 C0 8B 86"
 follow_mode = "None"
 resolver = "signature"
 required = false
@@ -220,8 +220,20 @@ symbol = "Patterns::CRemoteClientManager::RecvPkt"
 name = "CRemoteClientManager::RecvPkt"
 target_rva = 24410688
 match_rva = 24410688
-signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 EC 1C 8B 86 ? 08 00 00 8B 00 85 C0 0F 85 ? ? ? ? C7 45 E4 00 00 00 00 83 EC 08 89 F3 6A 01 FF 75 0C E8 ? ? ? ? 89 C7 83 C4 10 85 C0 0F 84 ? ? ? ? 83 EC 0C 50"
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 EC 1C 8B 86 ? ? 00 00 8B 00 85 C0 0F 85 ? ? ? ? C7 45 E4 00 00 00 00 83 EC 08 89 F3 6A 01 FF 75 0C E8 ? ? ? ? 89 C7 83 C4 10 85 C0 0F 84 ? ? ? ? 83 EC 0C 50"
 follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamEngine::GetServerPipe"
+name = "CSteamEngine::GetServerPipe"
+target_rva = 27520800
+match_rva = 27520815
+signature = "0F B7 CA 31 C0 3B 4B"
+follow_mode = "PrologueUpwards"
 resolver = "signature"
 required = true
 match_count = 1
@@ -240,12 +252,36 @@ match_count = 1
 target_count = 1
 
 [[locators]]
+symbol = "Patterns::CSteamEngine::Offset_ClientUtils"
+name = "CSteamEngine::m_ClientUtils"
+target_rva = 25109765
+match_rva = 25109765
+signature = "89 86 ? ? ? ? 8D 86 ? ? ? ? 89 44 24 ? 50 E8 ? ? ? ? 83 C4"
+follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
 symbol = "Patterns::CSteamEngine::Offset_User"
 name = "CSteamEngine::m_pUser"
 target_rva = 25225489
 match_rva = 25225489
 signature = "8B 80 ? ? ? ? FF 75 ? 8D 34"
 follow_mode = "None"
+resolver = "signature"
+required = true
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::CSteamEngine::ProcessIPCFrame"
+name = "CSteamEngine::ProcessIPCFrame"
+target_rva = 25135888
+match_rva = 25135966
+signature = "5E C3 FF 74 24"
+follow_mode = "PrologueUpwards"
 resolver = "signature"
 required = true
 match_count = 1
@@ -303,9 +339,9 @@ target_count = 1
 symbol = "Patterns::CUser::GetSubscribedApps"
 name = "CUser::GetSubscribedApps"
 target_rva = 25811840
-match_rva = 27075682
-signature = "E8 ? ? ? ? 89 C6 83 C4 10 85 C0 0F 84 ? ? ? ? 8B 9D ? ? ? ? 39 D8"
-follow_mode = "Relative"
+match_rva = 25811840
+signature = "55 89 E5 57 56 E8 ? ? ? ? 81 C6 ? ? ? ? 53 83 C4 80 0F B6 45 14 6A 00 6A 00 88 45 8F 8D 45 D0 66 0F 6F 86 ? ? ? ? 50 89 45 80 0F 11 45 BC 66 0F 6F 86 ? ? ? ? 89 75 94 0F 29 45 A8"
+follow_mode = "None"
 resolver = "signature"
 required = true
 match_count = 1
@@ -328,7 +364,7 @@ symbol = "Patterns::CUser::NotifyLicensesUpdated"
 name = "CUser::NotifyLicensesUpdated"
 target_rva = 25741648
 match_rva = 25741648
-signature = "55 89 E5 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 81 EC ? ? ? ? 8B 45 08 8B B8 ? ? 00 00 89 9D ? ? FF FF 85 FF"
+signature = "55 89 E5 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 81 EC BC 01 00 00 8B 45 08 8B ? ? 1B 00 00 89 9D 54 FE FF FF 85 ? 0F 8E ? ? ? ? 8D 83 ? ? ? ? 83 EC 08 6A 7D 50"
 follow_mode = "None"
 resolver = "signature"
 required = false
@@ -376,7 +412,7 @@ symbol = "Patterns::CUser::ProcessPendingLicenseUpdates"
 name = "CUser::ProcessPendingLicenseUpdates"
 target_rva = 25743680
 match_rva = 25743680
-signature = "55 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 83 EC 2C 8B 44 24 40 8B 88 7C 1C 00 00 85 C9 0F 8E ? ? ? ? 05 70 1C 00 00 89 44 24 18 8D 83 ? ? ? ? 8B 30"
+signature = "55 57 56 53 E8 ? ? ? ? 81 C3 ? ? ? ? 83 EC 2C 8B 44 24 40 8B 88 ? 1C 00 00 85 C9 0F 8E ? ? ? ? 05 ? 1C 00 00 89 44 24 18 8D 83 ? ? ? ? 8B 30"
 follow_mode = "None"
 resolver = "signature"
 required = false
@@ -472,7 +508,7 @@ symbol = "Patterns::IClientRemoteStorage::RunIPCFrame"
 name = "IClientRemoteStorage::RunIPCFrame"
 target_rva = 21880656
 match_rva = 21880732
-signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 6C E8 2F 87"
+signature = "E8 ? ? ? ? 8B 85 ? ? ? ? 83 C4 10 3D 65 DD 12 87"
 follow_mode = "PrologueUpwards"
 resolver = "ipcframe-root"
 required = true
@@ -525,17 +561,6 @@ follow_mode = "PrologueUpwards"
 resolver = "signature"
 required = true
 match_count = 1
-target_count = 1
-
-[[locators]]
-symbol = "Patterns::IClientUser::GetSteamId"
-name = "IClientUser::GetSteamID"
-target_rva = 21099920
-signature = "E8 ? ? ? ? 89 D8 83 C4 0C 83 C4 08 5B C2 04 00 ? 83 EC 08 50 53 FF D2 89 D8 83 C4 0C 83 C4 08 5B C2 04 00"
-follow_mode = "Relative"
-resolver = "relative-convergence"
-required = true
-match_count = 20
 target_count = 1
 
 [[locators]]
