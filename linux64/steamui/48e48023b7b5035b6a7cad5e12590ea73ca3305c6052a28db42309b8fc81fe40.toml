@@ -1,0 +1,60 @@
+schema = 1
+platform = "linux64"
+component = "steamui"
+module_name = "steamui.so"
+module_sha256 = "48e48023b7b5035b6a7cad5e12590ea73ca3305c6052a28db42309b8fc81fe40"
+module_size = 44424528
+gnu_build_id = "a29b8466e72f386c535cf96e697b8cc40956e968"
+steam_version = 1794536281
+consumer_commit = "f44a5af9e564f4892375fd1d34261895d456c3ee"
+minimum_consumer_schema = 1
+revision = 1
+source = "deterministic"
+
+[[locators]]
+symbol = "Patterns::SteamUI::AppControllerRunFrame"
+name = "CSteamUIAppController::RunFrame"
+target_rva = 27094016
+match_rva = 27094016
+signature = "41 57 41 56 41 55 41 54 55 53 48 83 EC 38 64 48 8B 1C 25 28 00 00 00 48 89 5C 24 28 48 89 FB E8 ? ? ? ? 66 0F EF C9 66 0F EF D2 F2 0F 5A C0 F3 0F 5A D0 F3 0F 5A 8B ? ? 00 00"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::GetAppByID"
+name = "CSteamUIAppController::GetAppByID"
+target_rva = 26974656
+match_rva = 26974656
+signature = "41 57 41 56 49 89 FE 41 55 41 54 55 53 48 83 EC 38 89 74 24 0C 89 54 24 08 64 48 8B 04 25 28 00 00 00 48 89 44 24 28 48 8B 05 ? ? ? ? 8B 00 85 C0 0F 85 ? ? ? ? 48 C7 44 24 10 00 00 00 00 85 F6 89 F5"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::MarkAppChange"
+name = "CUpdateManager::MarkAppChange"
+target_rva = 28434368
+match_rva = 28434368
+signature = "41 57 41 89 F7 41 56 41 55 41 54 55 48 89 FD 53 48 83 EC 28 48 8B 05 ? ? ? ? 64 48 8B 1C 25 28 00 00 00 48 89 5C 24 18 89 D3 8B 10 85 DB 0F 94 C0 85 F6 0F 94 C1"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
+
+[[locators]]
+symbol = "Patterns::SteamUI::OwnershipFlagsReference"
+name = "CSteamApp::OwnershipFlagsReference"
+target_rva = 27015454
+match_rva = 27015454
+signature = "41 8B ? 1C 48 8B BD ? ? ? ? 48 8D 35 ? ? ? ? E8"
+follow_mode = "None"
+resolver = "signature"
+required = false
+match_count = 1
+target_count = 1
